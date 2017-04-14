@@ -1,2 +1,0 @@
-# joshandmere.com
-Wedding Website

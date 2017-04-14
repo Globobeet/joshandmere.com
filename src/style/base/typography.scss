@@ -1,0 +1,10 @@
+html {
+    font-size: 70%;
+    @media screen and (min-width: 480px) { font-size: 90%; }
+    @media screen and (min-width: 960px) { font-size: 110%; }
+}
+
+body {
+    font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+    font-size: 1.8rem;
+}

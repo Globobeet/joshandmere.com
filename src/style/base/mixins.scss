@@ -1,0 +1,22 @@
+@mixin position($position: absolute, $location: auto auto auto auto) {
+    position: $position;
+    top: nth($location, 1);
+    right: nth($location, 2);
+    bottom: nth($location, 3);
+    left: nth($location, 4);
+}
+
+%imgReplace {
+    font-size: 0;
+    text-indent: -100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@mixin imgReplace($image, $size) {
+    @extend %imgReplace;
+    width: nth($size, 1);
+    height: nth($size, 2);
+    background-image: url("https://res.cloudinary.com/globobeet/image/upload/#{$image}");
+    background-size: contain;
+}

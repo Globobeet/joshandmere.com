@@ -1,0 +1,62 @@
+.hero {
+    color: $gray;
+    text-align: center;
+    text-transform: uppercase;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    position: relative;
+    padding-top: 32vh;
+    height: 100vh;
+
+    > * { z-index: 5; }
+
+    &-bg {
+        @include position(absolute, 0 0 0 0);
+
+        &--image {
+            z-index: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: saturate(.5);
+        }
+
+        &--overlay {
+            z-index: 1;
+            opacity: .8;
+            background: linear-gradient(to right top, $secondary, $primary);
+        }
+    }
+
+    &-divider {
+        @include imgReplace("v1490919563/jm-wedding/dividers/light-lg.svg", 9.3rem 1.4rem);
+        display: block;
+        margin: 6vh auto 8vh;
+    }
+
+    &-details {
+        &-date {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: $white;
+            letter-spacing: .2em;
+            margin: 0;
+        }
+
+        &-location {
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: .3em;
+            margin: .5em 0 0;
+        }
+    }
+
+    &-comingSoon {
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: .3em;
+        margin-top: 6vh;
+        color: $white;
+    }
+}
