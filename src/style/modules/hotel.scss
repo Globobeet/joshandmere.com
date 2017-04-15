@@ -1,0 +1,60 @@
+.theHotel {
+    &-image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    
+    &-secondary{
+        .overlayBlock-bg--image {
+            filter: saturate(1);
+        }
+        
+        &-spacer {
+            display: block;
+            height: 0;
+            padding-bottom: 100%;
+        }
+    }
+    
+    &-primary {
+        text-align: center;
+        color: $gray;
+        background: $white;
+        padding: 2em;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+    }
+
+    a { color: $gray-dark; }
+    
+    strong {
+        font-weight: $weight-regular;
+        color: $gray-dark;
+    }
+    
+    &-leadIn,
+    &-address {
+        margin: 0;
+    }
+    
+    &-details {
+        color: $gray-dark;
+        margin: 40px auto;
+    }
+    
+    @include breakpoint($screen-medium) {
+        &-primary { padding: 3rem; }
+    }
+    
+    @include breakpoint($screen-large) {
+        display: flex;
+        flex-flow: row nowrap;
+        
+        &-primary,
+        &-secondary {
+            flex: 1 0 50%;
+        }
+    }
+}

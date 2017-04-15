@@ -3,6 +3,10 @@
     color: $gray-light;
     padding: 60px 0;
     background: $gray-dark;
+    min-height: 90vh;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
     
     .overlayBlock-bg--image { 
         filter: saturate(0);
