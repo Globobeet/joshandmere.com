@@ -3,17 +3,18 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "keystone": "4.0.0-beta.5",
-    "lodash": "^4.13.1",
-    "moment": "2.17.1",
+    "async": "2.1.4",
     "cloudinary": "1.7.0",
+    "dotenv": "4.0.0",
     "express-handlebars": "3.0.0",
     "handlebars": "4.0.6",
+    "keystone": "4.0.0-beta.5",
+    "keystone-email": "1.0.5",
+    "lodash": "^4.13.1",
+    "moment": "2.17.1",
     "node-sass": "4.5.0",
     "node-sass-middleware": "0.11.0",
-    "dotenv": "4.0.0",
-    "keystone-email": "1.0.5",
-    "async": "2.1.4"
+    "nodemon": "^1.11.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.7",
@@ -23,6 +24,7 @@
     "babel-preset-es2015": "^6.24.0",
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-2": "^6.22.0",
+    "breakpoint-sass": "^2.7.1",
     "concurrently": "^3.4.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.27.3",
@@ -42,8 +44,7 @@
     "webpack": "^2.4.1"
   },
   "scripts": {
-    "lint": "eslint .",
-    "start": "node index",
+    "start": "nodemon index --ignore public/ --ignore src/ --ignore templates/",
     "build-dev": "webpack --watch",
     "build": "NODE_ENV=production webpack -p",
     "dev": "concurrently --kill-others \"npm run build-dev\" \"npm run start\""

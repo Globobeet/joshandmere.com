@@ -1,0 +1,54 @@
+.theCouple{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 100px;
+    
+    &-content {
+        margin-top: -10vh;
+        padding: 0;
+        position: relative;
+        z-index: 5;
+        background: $white;
+        box-shadow: 0 4px 48px rgba($gray-dark, .2);
+    }
+    
+    &-primary {
+        padding: 2.5rem;
+    }
+    
+    &-secondary { 
+        background-size: cover;
+        background-position: center;
+        background-color: $gray-dark;
+        min-height: 75vh;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-end;
+        padding: 4rem;
+    }
+    
+    &-title { color: $gray; }
+    
+    &-photos {
+        font-size: $size-small;
+        color: $white;
+        width: 100%;
+        max-width: 440px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    @include breakpoint($screen-large) {
+        &-content {
+            display: flex;
+            flex-flow: row nowrap;
+        }
+        
+        &-primary,
+        &-secondary {
+            flex: 1 0 50%;
+        }
+        
+        &-primary { align-self: center; }
+    }
+}

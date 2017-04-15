@@ -5,3 +5,46 @@ $gray-dark: #31303A;
 $black: #000000;
 $primary: #AC5858;
 $secondary: #242147;
+
+// Paths
+$font-path: '/fonts';
+$image-path: '/img';
+
+// Font Sizes
+$size-xsmall: 1.1rem;
+$size-small: 1.4rem;
+$size-regular: 1.6rem;
+$size-large: 1.8rem;
+$size-xlarge: 2.4rem;
+
+// Font-Scaling
+$scaling-title: 2;
+
+// Font Weights
+$weight-regular: 400;
+$weight-bold: 700;
+$weight-extrabold: 900;
+
+// Leading
+$leading-none: 1;
+$leading-tight: 1.2;
+$leading-regular: 1.4;
+$leading-loose: 1.6;
+
+// Speeds
+$speed-fast: .2s;
+$speed-regular: .4s;
+$speed-slow: .8s;
+
+// Breakpoints
+$bp-small: 480px;
+$bp-large: 960px;
+$bp-jumbo: 1200px;
+
+// Media Queries
+$screen-medium: $bp-small;
+$screen-large: $bp-large;
+$screen-jumbo: $bp-jumbo;
+$screen-small-only: max-width $bp-small;
+$screen-medium-only: $bp-small $bp-large;
+$screen-medium-max: max-width $bp-large;

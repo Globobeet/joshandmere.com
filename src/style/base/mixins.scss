@@ -20,3 +20,6 @@
     background-image: url("https://res.cloudinary.com/globobeet/image/upload/#{$image}");
     background-size: contain;
 }
+
+@function font-url($path) { @return url("#{$font-path}/#{$path}"); }
+@function image-url($path) { @return url("#{$image-path}/#{$path}"); }

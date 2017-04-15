@@ -415,6 +415,12 @@ template {
 [hidden] {
   display: none; }
 
+a, a:hover {
+  text-decoration: none; }
+
+*:focus {
+  outline: none; }
+
 .branding-logo, .hero-divider {
   font-size: 0;
   text-indent: -100%;
@@ -424,29 +430,45 @@ template {
 * {
   box-sizing: border-box; }
 
-html,
 body {
-  height: 100vh;
-  overflow: hidden; }
+  background: #E4E1E6; }
 
 .contentWrap {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px; }
 
+@font-face {
+  font-family: 'NorthLand-Regular';
+  src: url("/fonts/NorthLand-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/NorthLand-Regular.otf") format("opentype"), url("/fonts/NorthLand-Regular.woff") format("woff"), url("/fonts/NorthLand-Regular.ttf") format("truetype"), url("/fonts/NorthLand-Regular.svg#NorthLand-Regular") format("svg");
+  font-weight: 400;
+  font-style: normal; }
+
 html {
   font-size: 70%; }
-  @media screen and (min-width: 480px) {
+  @media (min-width: 480px) {
+    html {
+      font-size: 75%; } }
+  @media (min-width: 960px) {
     html {
       font-size: 90%; } }
-  @media screen and (min-width: 960px) {
-    html {
-      font-size: 110%; } }
 
 body {
   font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
-  font-size: 1.8rem; }
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.6; }
+  @media (min-width: 960px) {
+    body {
+      font-size: 1.4rem; } }
+
+.u-title {
+  font-family: "NorthLand-Regular", "Georgia", serif;
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0; }
 
 .branding-logo {
   width: 23rem;
@@ -459,6 +481,19 @@ body {
   font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: .3em; }
+
+.button {
+  font-size: 1.8rem;
+  padding: .75em 1.25em;
+  border: solid 2px;
+  border-radius: .4em;
+  background: rgba(49, 48, 58, 0);
+  display: inline-block;
+  text-align: center;
+  -webkit-transition: background 0.4s ease-out;
+  transition: background 0.4s ease-out; }
+  .button:hover {
+    background: rgba(49, 48, 58, 0.6); }
 
 .hero {
   color: #ADA3B3;
@@ -475,8 +510,8 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
-  padding-top: 32vh;
-  height: 100vh; }
+  padding-top: 8vh;
+  height: 90vh; }
   .hero > * {
     z-index: 5; }
   .hero-bg {
@@ -505,7 +540,7 @@ body {
     display: block;
     margin: 6vh auto 8vh; }
   .hero-details-date {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
     font-weight: 900;
     color: #FFFFFF;
     letter-spacing: .2em;
@@ -515,11 +550,61 @@ body {
     font-weight: 700;
     letter-spacing: .3em;
     margin: .5em 0 0; }
-  .hero-comingSoon {
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: .3em;
-    margin-top: 6vh;
-    color: #FFFFFF; }
+
+.theCouple {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 100px; }
+  .theCouple-content {
+    margin-top: -10vh;
+    padding: 0;
+    position: relative;
+    z-index: 5;
+    background: #FFFFFF;
+    box-shadow: 0 4px 48px rgba(49, 48, 58, 0.2); }
+  .theCouple-primary {
+    padding: 2.5rem; }
+  .theCouple-secondary {
+    background-size: cover;
+    background-position: center;
+    background-color: #31303A;
+    min-height: 75vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding: 4rem; }
+  .theCouple-title {
+    color: #ADA3B3; }
+  .theCouple-photos {
+    font-size: 1.4rem;
+    color: #FFFFFF;
+    width: 100%;
+    max-width: 440px;
+    display: block;
+    margin: 0 auto; }
+  @media (min-width: 960px) {
+    .theCouple-content {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: row nowrap;
+              flex-flow: row nowrap; }
+    .theCouple-primary, .theCouple-secondary {
+      -webkit-box-flex: 1;
+          -ms-flex: 1 0 50%;
+              flex: 1 0 50%; }
+    .theCouple-primary {
+      -ms-flex-item-align: center;
+          -ms-grid-row-align: center;
+          align-self: center; } }
 
 /*# sourceMappingURL=site.css.map*/

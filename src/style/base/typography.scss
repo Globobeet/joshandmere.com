@@ -1,10 +1,35 @@
+
+@font-face {
+    font-family: 'NorthLand-Regular';
+    src:    font-url('NorthLand-Regular.eot?#iefix') format('embedded-opentype'),
+            font-url('NorthLand-Regular.otf') format('opentype'),
+            font-url('NorthLand-Regular.woff') format('woff'), 
+            font-url('NorthLand-Regular.ttf')  format('truetype'), 
+            font-url('NorthLand-Regular.svg#NorthLand-Regular') format('svg');
+    font-weight: $weight-regular;
+    font-style: normal;
+}
+
+
 html {
     font-size: 70%;
-    @media screen and (min-width: 480px) { font-size: 90%; }
-    @media screen and (min-width: 960px) { font-size: 110%; }
+    @include breakpoint($screen-medium) { font-size: 75%; }
+    @include breakpoint($screen-large) { font-size: 90%; }
 }
 
 body {
     font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
-    font-size: 1.8rem;
+    font-size: $size-regular;
+    font-weight: $weight-regular;
+    line-height: $leading-loose;
+    
+    @include breakpoint($screen-large) { font-size: $size-small; }
+}
+
+.u-title {
+    font-family: "NorthLand-Regular", "Georgia", serif;
+    font-size: $size-xlarge * $scaling-title;
+    font-weight: $weight-regular;
+    line-height: $leading-tight;
+    margin: 0;
 }

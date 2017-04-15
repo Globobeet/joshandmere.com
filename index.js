@@ -1,10 +1,6 @@
-// Simulate config options from your production environment by
-// customising the .env file in your project's root folder.
 require('dotenv').config();
-
-// Require keystone
-var keystone = require('keystone');
-var handlebars = require('express-handlebars');
+const keystone = require('keystone');
+const handlebars = require('express-handlebars');
 
 keystone.init({
 	'name': 'Josh and Mere',
@@ -27,21 +23,24 @@ keystone.init({
 	'auto update': true,
 	'session': true,
 	'auth': true,
-	'user model': 'User',
+	'user model': 'User', 
 });
+
 keystone.import('models');
+
 keystone.set('locals', {
-	_: require('lodash'),
-	env: keystone.get('env'),
-	utils: keystone.utils,
-	editable: keystone.content.editable,
+    _: require('lodash'),
+    env: keystone.get('env'),
+    utils: keystone.utils,
+    editable: keystone.content.editable,
 });
+
 keystone.set('routes', require('./routes'));
 
 keystone.set('nav', {
-	users: 'users',
+    users: 'users',
+    content: 'contents',
 });
-
 
 if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	console.log('----------------------------------------'

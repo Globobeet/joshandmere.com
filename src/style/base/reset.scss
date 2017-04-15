@@ -1,2 +1,10 @@
 @import 'normalize-scss/sass/normalize';
 @include normalize();
+
+@import 'breakpoint-sass/stylesheets/breakpoint';
+
+a, a:hover {
+    text-decoration: none;
+}
+
+*:focus { outline: none; }
