@@ -1,8 +1,8 @@
 {{!< default}}
 
-<section class="hero">
-	<span class="hero-bg hero-bg--overlay"></span>
-	<span class="hero-bg hero-bg--image" style="background-image: url({{{cl "url" "jm-wedding/hero-bg" transformation="background-full"}}});"></span>
+<section class="hero overlayBlock">
+	<span class="overlayBlock-bg overlayBlock-bg--overlay"></span>
+	<span class="overlayBlock-bg overlayBlock-bg--image" style="background-image: url({{{cl "url" "jm-wedding/hero-bg" transformation="background-full"}}});"></span>
 
 	<div class="contentWrap">
 		<div class="branding">
@@ -28,5 +28,24 @@
         <div class="theCouple-secondary" style="background-image: url('{{{cl "url" "jm-wedding/couple" gravity="faces" crop="fill" width=800 height=1200}}}');">
             <a href="https://mattnnatblog.com/engagements/lititz-springs-park-engagement-meredith-josh/" class="button theCouple-photos">{{couple_photo_btn.md}}</a>
         </div>
+    </div>
+</section>
+
+<section id="the-venue" class="overlayBlock theVenue">
+    <span class="overlayBlock-bg overlayBlock-bg--image" style="background-image: url('{{cl "url" "jm-wedding/venue-bg"}}');"></span>
+    <span class="overlayBlock-bg overlayBlock-bg--overlay"></span>
+    
+    <div class="contentWrap theVenue-content">
+        <header class="theVenue-header">
+            <p class="u-leadIn theVenue-leadIn">{{venue_leadin.md}}</p>
+            <h2 class="u-title theVenue-title">{{venue_name.md}}</h2>
+        </header>
+    
+        <div class="theVenue-content">
+            {{{venue_content.html}}}
+        </div>
+    
+        <p class="theVenue-address">{{{insertBreaks venue_address.md}}}</p>
+        <p class="theVenue-directions"><a href="https://www.google.com/maps/dir//Drumore+Estate,+331+Red+Hill+Rd,+Pequea,+PA+17565/@39.8964421,-76.2938167,17z/data=!4m15!1m6!3m5!1s0x89c62de0ff3d792f:0x2ee3fd0f0035089f!2sDrumore+Estate!8m2!3d39.896438!4d-76.291628!4m7!1m0!1m5!1m1!1s0x89c62de0ff3d792f:0x2ee3fd0f0035089f!2m2!1d-76.291628!2d39.896438">Get Directions</a></p>
     </div>
 </section>

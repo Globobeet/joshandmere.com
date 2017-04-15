@@ -1,0 +1,26 @@
+.overlayBlock {
+    position: relative;
+
+    > * {
+        position: relative;
+        z-index: 5; 
+    }
+    
+    &-bg {
+        @include position(absolute, 0 0 0 0);
+
+        &--image {
+            z-index: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: saturate(.5);
+        }
+
+        &--overlay {
+            z-index: 1;
+            opacity: .8;
+            background: $gray-dark;
+        }
+    }
+}

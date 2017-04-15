@@ -33,3 +33,11 @@ body {
     line-height: $leading-tight;
     margin: 0;
 }
+
+.u-leadIn {
+    font-size: $size-xsmall;
+    font-weight: $weight-medium;
+    text-transform: uppercase;
+    letter-spacing: .7em;
+    margin: 0;
+}

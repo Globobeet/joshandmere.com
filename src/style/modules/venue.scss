@@ -1,0 +1,37 @@
+.theVenue {
+    text-align: center;
+    color: $gray-light;
+    padding: 60px 0;
+    background: $gray-dark;
+    
+    .overlayBlock-bg--image { 
+        filter: saturate(0);
+        background-size: auto;
+        background-position: center top;
+    }
+    
+    .overlayBlock-bg--overlay {
+        opacity: 1;
+        background: linear-gradient(to bottom, rgba($gray-dark, .8), $gray-dark 350px);
+    }
+    
+    a {
+        color: $primary;
+        transition: color $speed-fast ease-out;
+        &:hover { color: $gray; }
+    }
+    
+    &-leadIn { color: $primary; }
+    &-title { color: $white; }
+    
+    &-address,
+    &-directions {
+        font-size: $size-xsmall;
+        font-weight: $weight-medium;
+        text-transform: uppercase;
+        letter-spacing: .4em;
+        color: $white;
+        line-height: $leading-loose * 1.5;
+        margin-top: 2em;
+    }
+}

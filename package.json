@@ -44,7 +44,7 @@
     "webpack": "^2.4.1"
   },
   "scripts": {
-    "start": "nodemon index --ignore public/ --ignore src/ --ignore templates/",
+    "start": "nodemon index --ignore public/ --ignore src/ --ignore templates/views/layouts --ignore templates/views/partials --ignore templates/views/index.hbs",
     "build-dev": "webpack --watch",
     "build": "NODE_ENV=production webpack -p",
     "dev": "concurrently --kill-others \"npm run build-dev\" \"npm run start\""

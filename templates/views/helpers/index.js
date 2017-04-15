@@ -28,4 +28,8 @@ module.exports = () => ({
 
         return publicId ? method(publicId, opts) : '';
     },
+    
+    insertBreaks(str) {
+        return str.replace(/\r\n/g, '<br />');
+    },
 });
