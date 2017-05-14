@@ -1,6 +1,6 @@
 .branding {
     &-logo {
-        @include imgReplace("v1490919538/jm-wedding/logo.svg", 23rem 6.9rem);
+        @include imgReplace("logo.svg", 23rem 6.9rem);
         margin: 0 auto;
     }
 

@@ -1,5 +1,14 @@
 {{!< default}}
 
+<nav class="mainNav">
+    <button type="button" class="js-menu-toggle mainNav-toggle u-hideLarge"><i class="icon icon--bars icon--size24 icon--colorWhite"></i> Navigation</button>
+    <div class="mainNav-links">
+        {{#each navItems}}
+            <a href="{{href}}" class="mainNav-item {{className}}">{{name}}</a>
+        {{/each}}
+    </div>
+</nav>
+
 <section class="hero overlayBlock">
 	<span class="overlayBlock-bg overlayBlock-bg--overlay"></span>
 	<span class="overlayBlock-bg overlayBlock-bg--image" style="background-image: url({{{cl "url" "jm-wedding/hero-bg" transformation="background-full"}}});"></span>
@@ -7,14 +16,14 @@
 	<div class="contentWrap">
 		<div class="branding">
 			<h1 class="branding-logo">Josh &amp; Mere</h1>
-			<p class="branding-tagline">{{site_tagline.md}}</p>
+			<p class="branding-tagline">{{content.site_tagline.md}}</p>
 		</div>
 
 		<span class="hero-divider"></span>
 
 		<div class="hero-details">
-			<p class="hero-details-date">{{event_date.md}}</p>
-			<p class="hero-details-location">At {{venue_name.md}}</p>
+			<p class="hero-details-date">{{content.event_date.md}}</p>
+			<p class="hero-details-location">At {{content.venue_name.md}}</p>
 		</div>
 	</div>
 </section>
@@ -22,11 +31,11 @@
 <section id="the-couple" class="theCouple">
     <div class="contentWrap theCouple-content">
         <div class="theCouple-primary">
-            <h2 class="theCouple-title u-title">{{couple_title.md}}</h2>
-            {{{couple_content.html}}}
+            <h2 class="theCouple-title u-title">{{content.couple_title.md}}</h2>
+            {{{content.couple_content.html}}}
         </div>
         <div class="theCouple-secondary" style="background-image: url('{{{cl "url" "jm-wedding/couple" gravity="faces" crop="fill" width=800 height=1200}}}');">
-            <a href="https://mattnnatblog.com/engagements/lititz-springs-park-engagement-meredith-josh/" class="button theCouple-photos">{{couple_photo_btn.md}}</a>
+            <a href="https://mattnnatblog.com/engagements/lititz-springs-park-engagement-meredith-josh/" class="button theCouple-photos">{{content.couple_photo_btn.md}}</a>
         </div>
     </div>
 </section>
@@ -37,15 +46,15 @@
     
     <div class="contentWrap theVenue-content">
         <header class="theVenue-header">
-            <p class="u-leadIn theVenue-leadIn">{{venue_leadin.md}}</p>
-            <h2 class="u-title theVenue-title">{{venue_name.md}}</h2>
+            <p class="u-leadIn theVenue-leadIn">{{content.venue_leadin.md}}</p>
+            <h2 class="u-title theVenue-title">{{content.venue_name.md}}</h2>
         </header>
     
         <div class="theVenue-content">
-            {{{venue_content.html}}}
+            {{{content.venue_content.html}}}
         </div>
     
-        <p class="theVenue-address">{{{insertBreaks venue_address.md}}}</p>
+        <p class="theVenue-address">{{{insertBreaks content.venue_address.md}}}</p>
         <p class="theVenue-directions"><a href="https://www.google.com/maps/dir//Drumore+Estate,+331+Red+Hill+Rd,+Pequea,+PA+17565/@39.8964421,-76.2938167,17z/data=!4m15!1m6!3m5!1s0x89c62de0ff3d792f:0x2ee3fd0f0035089f!2sDrumore+Estate!8m2!3d39.896438!4d-76.291628!4m7!1m0!1m5!1m1!1s0x89c62de0ff3d792f:0x2ee3fd0f0035089f!2m2!1d-76.291628!2d39.896438">Get Directions</a></p>
     </div>
 </section>
@@ -56,15 +65,15 @@
         <span class="theHotel-secondary-spacer"></span>
     </div>
     <div class="theHotel-primary">
-        <p class="theHotel-leadIn">{{hotel_leadin.md}}</p>
+        <p class="theHotel-leadIn">{{content.hotel_leadin.md}}</p>
         
         <div class="theHotel-details">
-            <h2 class="theHotel-name u-title">{{hotel_name.md}}</h2>
-            <p class="theHotel-address">{{{insertBreaks hotel_address.md}}}</p>
+            <h2 class="theHotel-name u-title">{{content.hotel_name.md}}</h2>
+            <p class="theHotel-address">{{{insertBreaks content.hotel_address.md}}}</p>
         </div>
         
         <div class="theHotel-content">
-            {{{hotel_content.html}}}
+            {{{content.hotel_content.html}}}
         </div>
     </div>
 </section>

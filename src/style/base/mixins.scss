@@ -17,9 +17,36 @@
     @extend %imgReplace;
     width: nth($size, 1);
     height: nth($size, 2);
-    background-image: url("https://res.cloudinary.com/globobeet/image/upload/#{$image}");
+    background-image: cl-url($image);
     background-size: contain;
+}
+
+@mixin transitionProps($props, $speed: $speed-regular, $ease: ease-out) {
+    $transitions: ();
+    
+    @each $prop in $props {
+        $transitions: $transitions, $prop $speed $ease;
+    }
+    
+    transition: $transitions;
+}
+
+@mixin zIndex($layer) {
+    $_layers: (
+        nav: 10,
+        nav-control: 11,
+    );
+
+    @if map-has-key($_layers, $layer) {
+        z-index: map-get($_layers, $layer);
+    } @else {
+        @warn 'No z-index found for layer "#{$layer}".';
+        z-index: 0;
+    }
+    
+    
 }
 
 @function font-url($path) { @return url("#{$font-path}/#{$path}"); }
 @function image-url($path) { @return url("#{$image-path}/#{$path}"); }
+@function cl-url($path) { @return url("#{$cl-path}/#{$path}"); }

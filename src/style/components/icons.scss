@@ -1,0 +1,27 @@
+.icon {
+    $_icons: bars;
+    $_sizes: 10, 12, 14, 18, 24, 32, 48;
+    $_colors: (
+        White: $white
+    );
+    
+    display: inline-block;
+    vertical-align: middle;
+    mask-position: center center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    
+    @each $icon in $_icons {
+        &--#{$icon} {
+            mask-image: cl-url('icons/#{$icon}.svg');
+        }
+    }
+    
+    @each $size in $_sizes {
+        &--size#{$size} { width: $size * 1px; height: $size * 1px; }
+    }
+    
+    @each $name, $color in $_colors {
+        &--color#{$name} { background-color: $color; }
+    }
+}

@@ -12,8 +12,5 @@ Content.add({
     value: { type: Types.Markdown, required: true, initial: true },
 });
 
-/**
- * Registration
- */
 Content.defaultColumns = 'slug, value';
 Content.register();

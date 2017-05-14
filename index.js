@@ -38,8 +38,9 @@ keystone.set('locals', {
 keystone.set('routes', require('./routes'));
 
 keystone.set('nav', {
-    users: 'users',
-    content: 'contents',
+    users: 'User',
+    content: 'Content',
+    navigation: 'NavItem',
 });
 
 if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {

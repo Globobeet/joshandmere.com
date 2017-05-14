@@ -439,6 +439,24 @@ body {
   margin: 0 auto;
   padding: 0 15px; }
 
+.u-hide {
+  display: none !important; }
+  @media (max-width: 480px) {
+    .u-hideSmall {
+      display: none !important; } }
+  @media (max-width: 960px) {
+    .u-hideMediumDown {
+      display: none !important; } }
+  @media (min-width: 480px) and (max-width: 960px) {
+    .u-hideMedium {
+      display: none !important; } }
+  @media (min-width: 480px) {
+    .u-hideMediumUp {
+      display: none !important; } }
+  @media (min-width: 960px) {
+    .u-hideLarge {
+      display: none !important; } }
+
 @font-face {
   font-family: 'NorthLand-Regular';
   src: url("/fonts/NorthLand-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/NorthLand-Regular.otf") format("opentype"), url("/fonts/NorthLand-Regular.woff") format("woff"), url("/fonts/NorthLand-Regular.ttf") format("truetype"), url("/fonts/NorthLand-Regular.svg#NorthLand-Regular") format("svg");
@@ -446,7 +464,9 @@ body {
   font-style: normal; }
 
 html {
-  font-size: 70%; }
+  font-size: 70%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility; }
   @media (min-width: 480px) {
     html {
       font-size: 75%; } }
@@ -480,7 +500,7 @@ body {
 .branding-logo {
   width: 23rem;
   height: 6.9rem;
-  background-image: url("https://res.cloudinary.com/globobeet/image/upload/v1490919538/jm-wedding/logo.svg");
+  background-image: url("https://res.cloudinary.com/globobeet/image/upload/jm-wedding/logo.svg");
   background-size: contain;
   margin: 0 auto; }
 
@@ -501,6 +521,42 @@ body {
   transition: background 0.4s ease-out; }
   .button:hover {
     background: rgba(49, 48, 58, 0.65); }
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-mask-position: center center;
+          mask-position: center center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+          mask-size: contain; }
+  .icon--bars {
+    -webkit-mask-image: url("https://res.cloudinary.com/globobeet/image/upload/jm-wedding/icons/bars.svg");
+            mask-image: url("https://res.cloudinary.com/globobeet/image/upload/jm-wedding/icons/bars.svg"); }
+  .icon--size10 {
+    width: 10px;
+    height: 10px; }
+  .icon--size12 {
+    width: 12px;
+    height: 12px; }
+  .icon--size14 {
+    width: 14px;
+    height: 14px; }
+  .icon--size18 {
+    width: 18px;
+    height: 18px; }
+  .icon--size24 {
+    width: 24px;
+    height: 24px; }
+  .icon--size32 {
+    width: 32px;
+    height: 32px; }
+  .icon--size48 {
+    width: 48px;
+    height: 48px; }
+  .icon--colorWhite {
+    background-color: #FFFFFF; }
 
 .overlayBlock {
   position: relative; }
@@ -524,45 +580,6 @@ body {
       z-index: 1;
       opacity: .8;
       background: #31303A; }
-
-.hero {
-  color: #ADA3B3;
-  text-align: center;
-  text-transform: uppercase;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column nowrap;
-          flex-flow: column nowrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  position: relative;
-  padding-top: 8vh;
-  height: 90vh; }
-  .hero .overlayBlock-bg--overlay {
-    background: -webkit-linear-gradient(left bottom, #242147, #AC5858);
-    background: linear-gradient(to right top, #242147, #AC5858); }
-  .hero-divider {
-    width: 9.3rem;
-    height: 1.4rem;
-    background-image: url("https://res.cloudinary.com/globobeet/image/upload/v1490919563/jm-wedding/dividers/light-lg.svg");
-    background-size: contain;
-    display: block;
-    margin: 6vh auto 8vh; }
-  .hero-details-date {
-    font-size: 2.4rem;
-    font-weight: 900;
-    color: #FFFFFF;
-    letter-spacing: .2em;
-    margin: 0; }
-  .hero-details-location {
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: .3em;
-    margin: .5em 0 0; }
 
 .theCouple {
   padding: 0 15px 60px; }
@@ -618,12 +635,10 @@ body {
           -ms-grid-row-align: center;
           align-self: center; } }
 
-.theVenue {
+.hero {
+  color: #ADA3B3;
   text-align: center;
-  color: #E4E1E6;
-  padding: 60px 0;
-  background: #31303A;
-  min-height: 90vh;
+  text-transform: uppercase;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -633,34 +648,31 @@ body {
           flex-flow: column nowrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center; }
-  .theVenue .overlayBlock-bg--image {
-    -webkit-filter: saturate(0);
-            filter: saturate(0);
-    background-size: auto;
-    background-position: center top; }
-  .theVenue .overlayBlock-bg--overlay {
-    opacity: 1;
-    background: -webkit-linear-gradient(top, rgba(49, 48, 58, 0.8), #31303A 350px);
-    background: linear-gradient(to bottom, rgba(49, 48, 58, 0.8), #31303A 350px); }
-  .theVenue a {
-    color: #AC5858;
-    -webkit-transition: color 0.2s ease-out;
-    transition: color 0.2s ease-out; }
-    .theVenue a:hover {
-      color: #ADA3B3; }
-  .theVenue-leadIn {
-    color: #AC5858; }
-  .theVenue-title {
-    color: #FFFFFF; }
-  .theVenue-address, .theVenue-directions {
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: .4em;
+          justify-content: center;
+  position: relative;
+  padding-top: 8vh;
+  height: 90vh; }
+  .hero .overlayBlock-bg--overlay {
+    background: -webkit-linear-gradient(left bottom, #242147, #AC5858);
+    background: linear-gradient(to right top, #242147, #AC5858); }
+  .hero-divider {
+    width: 9.3rem;
+    height: 1.4rem;
+    background-image: url("https://res.cloudinary.com/globobeet/image/upload/jm-wedding/dividers/light-lg.svg");
+    background-size: contain;
+    display: block;
+    margin: 6vh auto 8vh; }
+  .hero-details-date {
+    font-size: 2.4rem;
+    font-weight: 900;
     color: #FFFFFF;
-    line-height: 2.55;
-    margin-top: 2em; }
+    letter-spacing: .2em;
+    margin: 0; }
+  .hero-details-location {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: .3em;
+    margin: .5em 0 0; }
 
 .theHotel-image {
   display: block;
@@ -723,5 +735,139 @@ body {
       -webkit-box-flex: 1;
           -ms-flex: 1 0 50%;
               flex: 1 0 50%; } }
+
+.mainNav {
+  font-size: 1.6rem;
+  font-weight: 100;
+  text-align: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  left: 0;
+  z-index: 10; }
+  .mainNav-item {
+    color: #FFFFFF; }
+  .mainNav-toggle {
+    font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: #FFFFFF;
+    padding: 15px;
+    border: none;
+    background: transparent;
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 1024px;
+    z-index: 11;
+    -webkit-transition: background 0.4s ease-out, max-width 0.4s ease-out;
+    transition: background 0.4s ease-out, max-width 0.4s ease-out; }
+    .mainNav-toggle .icon {
+      margin-right: .5em;
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      -webkit-transition: -webkit-transform 0.4s ease-out;
+      transition: -webkit-transform 0.4s ease-out;
+      transition: transform 0.4s ease-out;
+      transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out; }
+    .scrolled .mainNav-toggle {
+      background: rgba(37, 36, 44, 0.9); }
+    .showMenu .mainNav-toggle {
+      background: #25242c;
+      max-width: 420px; }
+      .showMenu .mainNav-toggle .icon {
+        -webkit-transform: rotate(90deg);
+                transform: rotate(90deg); }
+  @media (min-width: 960px) {
+    .mainNav {
+      padding: 1.25em 0;
+      -webkit-transition: background 0.4s ease-out, padding 0.4s ease-out;
+      transition: background 0.4s ease-out, padding 0.4s ease-out; }
+      .mainNav-links .mainNav-item {
+        opacity: 1;
+        -webkit-transition: opacity 0.2s ease-out;
+        transition: opacity 0.2s ease-out; }
+      .mainNav-links:hover .mainNav-item {
+        opacity: .4; }
+      .mainNav-links:hover .mainNav-item:hover {
+        opacity: 1; }
+      .mainNav-item {
+        display: inline-block;
+        margin: 0 1em; }
+      .scrolled .mainNav {
+        padding: .5em 0;
+        background: rgba(37, 36, 44, 0.9); }
+        .scrolled .mainNav:hover {
+          background: #25242c; } }
+  @media (max-width: 960px) {
+    .mainNav-links {
+      width: 100%;
+      max-width: 420px;
+      background: #31303A;
+      box-shadow: 0 -2px 4px #000000;
+      opacity: 0;
+      padding-top: 55px;
+      position: fixed;
+      top: 0;
+      right: auto;
+      bottom: 0;
+      left: -420px;
+      -webkit-transition: left 0.4s ease-out, opacity 0.4s ease-out;
+      transition: left 0.4s ease-out, opacity 0.4s ease-out; }
+      .showMenu .mainNav-links {
+        opacity: 1;
+        left: 0; }
+    .mainNav-item {
+      display: block;
+      padding: 1em;
+      border-bottom: 1px solid #25242c; } }
+
+.theVenue {
+  text-align: center;
+  color: #E4E1E6;
+  padding: 60px 0;
+  background: #31303A;
+  min-height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .theVenue .overlayBlock-bg--image {
+    -webkit-filter: saturate(0);
+            filter: saturate(0);
+    background-size: auto;
+    background-position: center top; }
+  .theVenue .overlayBlock-bg--overlay {
+    opacity: 1;
+    background: -webkit-linear-gradient(top, rgba(49, 48, 58, 0.8), #31303A 350px);
+    background: linear-gradient(to bottom, rgba(49, 48, 58, 0.8), #31303A 350px); }
+  .theVenue a {
+    color: #AC5858;
+    -webkit-transition: color 0.2s ease-out;
+    transition: color 0.2s ease-out; }
+    .theVenue a:hover {
+      color: #ADA3B3; }
+  .theVenue-leadIn {
+    color: #AC5858; }
+  .theVenue-title {
+    color: #FFFFFF; }
+  .theVenue-address, .theVenue-directions {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .4em;
+    color: #FFFFFF;
+    line-height: 2.55;
+    margin-top: 2em; }
 
 /*# sourceMappingURL=site.css.map*/

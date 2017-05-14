@@ -14,7 +14,7 @@
     }
 
     &-divider {
-        @include imgReplace("v1490919563/jm-wedding/dividers/light-lg.svg", 9.3rem 1.4rem);
+        @include imgReplace("dividers/light-lg.svg", 9.3rem 1.4rem);
         display: block;
         margin: 6vh auto 8vh;
     }

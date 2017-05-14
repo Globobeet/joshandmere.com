@@ -1,14 +1,26 @@
+const _ = require('lodash');
 const keystone = require('keystone');
 
 module.exports = (req, res) => {
     const { locals } = res;
     const view = new keystone.View(req, res);
-    const Content = keystone.list('Content');
-    
-    view.on('init', next => Content.model.find({}).lean().exec()
-        .then(results => results.forEach(({ slug, value }) => Object.assign(locals, { [slug]: value })))
+
+    const dataToContext = (list, key) => next => keystone.list(list)
+        .model.find({}).lean().exec()
+        .then(results => (locals[key] = results))
         .then(() => next())
-        .catch(next));
+        .catch(next);
+    
+    view.on('init', dataToContext('Content', 'content'));
+    
+    view.on('init', dataToContext('NavItem', 'navItems'));
+    
+    view.on('init', (next) => {
+        locals.content = locals.content.reduce((obj, { slug, value }) => 
+            Object.assign(obj, { [slug]: value }), {});
+        
+        next();
+    });
     
     view.render('index');
 };

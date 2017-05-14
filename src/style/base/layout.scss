@@ -8,3 +8,19 @@ body { background: $gray-light; }
     margin: 0 auto;
     padding: 0 15px;
 }
+
+.u-hide {
+    $_variants: (
+        Small: $screen-small-only,
+        MediumDown: $screen-medium-max,
+        Medium: $screen-medium-only,
+        MediumUp: $screen-medium,
+        Large: $screen-large,
+    );
+    
+    display: none !important;
+
+    @each $name, $bp in $_variants {
+        &#{$name} { @include breakpoint($bp) { display: none !important; } }
+    }
+}

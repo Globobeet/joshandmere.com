@@ -13,12 +13,14 @@
 
 html {
     font-size: 70%;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
     @include breakpoint($screen-medium) { font-size: 75%; }
     @include breakpoint($screen-large) { font-size: 90%; }
 }
 
 body {
-    font-family: "proxima-nova", "Helvetica", "Arial", sans-serif;
+    font-family: $font-body;
     font-size: $size-regular;
     font-weight: $weight-regular;
     line-height: $leading-loose;
@@ -27,7 +29,7 @@ body {
 }
 
 .u-title {
-    font-family: "NorthLand-Regular", "Georgia", serif;
+    font-family: $font-display;
     font-size: $size-xlarge * $scaling-title;
     font-weight: $weight-regular;
     line-height: $leading-tight;

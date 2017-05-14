@@ -9,6 +9,7 @@ $secondary: #242147;
 // Paths
 $font-path: '/fonts';
 $image-path: '/img';
+$cl-path: 'https://res.cloudinary.com/globobeet/image/upload/jm-wedding';
 
 // Font Sizes
 $size-xsmall: 1.1rem;
@@ -17,10 +18,15 @@ $size-regular: 1.6rem;
 $size-large: 1.8rem;
 $size-xlarge: 2.4rem;
 
+// Font Families
+$font-body: "proxima-nova", "Helvetica", "Arial", sans-serif;
+$font-display: "NorthLand-Regular", "Georgia", serif;
+
 // Font-Scaling
 $scaling-title: 2;
 
 // Font Weights
+$weight-thin: 100;
 $weight-regular: 400;
 $weight-medium: 600;
 $weight-bold: 700;
