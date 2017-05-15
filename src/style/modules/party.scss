@@ -1,0 +1,76 @@
+.theParty {
+    $this: &;
+    overflow: hidden;
+    
+    &-header { 
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    &-leadIn { color: $gray; }
+    
+    &-people {
+        overflow: hidden;
+        &:first-of-type { background: $primary; }
+        &:last-of-type { background: $secondary; }
+    }
+    
+    &-person {
+        text-align: center;
+        color: $white;
+        width: 50%;
+        padding-bottom: 50%;
+        float: left;
+        position: relative;
+        
+        &-info {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 15% 15px;
+            @include position(absolute, 0 0 0 0);
+        }
+        
+        &-name {
+            font-size: $size-large;
+            font-weight: $weight-bold;
+            line-height: $leading-tight;
+            margin: 0 0 .25em;
+        }
+        
+        &-designation {
+            font-size: $size-xsmall * .8;
+            font-weight: $weight-bold;
+            text-transform: uppercase;
+            display: inline-block;
+            border-radius: 3px;
+            background: $white;
+            padding: .5em .75em;
+        }
+        
+        &-bio {
+            a {
+                font-weight: $weight-bold;
+                color: $white;
+            }
+        }
+        
+        &--bride {
+            .overlayBlock-bg--overlay { background: $primary; }
+            #{$this}-person-designation { color: $primary; }
+        }
+        
+        &--groom {
+            .overlayBlock-bg--overlay { background: $secondary; }
+            #{$this}-person-designation { color: $secondary; }
+        }
+    }
+
+    @include breakpoint($screen-large) {
+        &-people {
+            width: 50%;
+            float: left;
+        }
+    }
+}

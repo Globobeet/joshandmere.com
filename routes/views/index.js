@@ -22,5 +22,14 @@ module.exports = (req, res) => {
         next();
     });
     
+    view.on('init', next => keystone.list('Member')
+        .model.find({}).lean().exec()
+        .then(results => {
+            _.set(locals, 'party.bridesmaids', _.filter(results, { side: 'bride' }));
+            _.set(locals, 'party.groomsmen', _.filter(results, { side: 'groom' }));
+            next();
+        })
+        .catch(next));
+    
     view.render('index');
 };

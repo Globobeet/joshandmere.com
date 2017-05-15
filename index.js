@@ -41,6 +41,7 @@ keystone.set('nav', {
     users: 'User',
     content: 'Content',
     navigation: 'NavItem',
+    members: 'Member',
 });
 
 if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {

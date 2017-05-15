@@ -40,11 +40,43 @@
     </div>
 </section>
 
+<section id="the-wedding-party" class="theParty">
+    <header class="theParty-header">
+        <p class="u-leadIn theParty-leadIn">{{content.wedding_party_title.md}}</p>
+    </header>
+
+    <div class="theParty-people">
+        {{#each party.bridesmaids}}
+            <div class="overlayBlock theParty-person theParty-person--bride">
+                <span class="overlayBlock-bg overlayBlock-bg--image" style="background-image: url('{{cl "url" image.public_id}}');"></span>
+                <span class="overlayBlock-bg overlayBlock-bg--overlay"></span>
+
+                <div class="theParty-person-info">
+                    <h3 class="theParty-person-name">{{name.first}} {{name.last}}</h3>
+                    <span class="theParty-person-designation">{{#if main}}Maid of Honor{{else}}Bridesmaid{{/if}}</span>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+    <div class="theParty-people">
+        {{#each party.groomsmen}}
+            <div class="overlayBlock theParty-person theParty-person--groom">
+                <span class="overlayBlock-bg overlayBlock-bg--image" style="background-image: url('{{cl "url" image.public_id}}');"></span>
+                <span class="overlayBlock-bg overlayBlock-bg--overlay"></span>
+                <div class="theParty-person-info">
+                    <h3 class="theParty-person-name">{{name.first}} {{name.last}}</h3>
+                    <span class="theParty-person-designation">{{#if main}}Best Man{{else}}Groomsman{{/if}}</span>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</section>
+
 <section id="the-venue" class="overlayBlock theVenue">
     <span class="overlayBlock-bg overlayBlock-bg--image" style="background-image: url('{{cl "url" "jm-wedding/venue-bg"}}');"></span>
     <span class="overlayBlock-bg overlayBlock-bg--overlay"></span>
     
-    <div class="contentWrap theVenue-content">
+    <div class="contentWrap">
         <header class="theVenue-header">
             <p class="u-leadIn theVenue-leadIn">{{content.venue_leadin.md}}</p>
             <h2 class="u-title theVenue-title">{{content.venue_name.md}}</h2>

@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -119,7 +119,7 @@ module.exports = Symbol;
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var freeGlobal = __webpack_require__(8);
+var freeGlobal = __webpack_require__(9);
 
 /** Detect free variable `self`. */
 var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -258,9 +258,37 @@ exports.default = animateScrollTo;
 
 /***/ }),
 /* 5 */
+/***/ (function(module, exports) {
+
+/**
+ * Checks if `value` is `undefined`.
+ *
+ * @static
+ * @since 0.1.0
+ * @memberOf _
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is `undefined`, else `false`.
+ * @example
+ *
+ * _.isUndefined(void 0);
+ * // => true
+ *
+ * _.isUndefined(null);
+ * // => false
+ */
+function isUndefined(value) {
+  return value === undefined;
+}
+
+module.exports = isUndefined;
+
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var debounce = __webpack_require__(11),
+var debounce = __webpack_require__(12),
     isObject = __webpack_require__(0);
 
 /** Error message constants. */
@@ -332,16 +360,16 @@ module.exports = throttle;
 
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_animated_scroll_to__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_animated_scroll_to___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_animated_scroll_to__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_throttle__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_throttle__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_lodash_throttle___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_lodash_throttle__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_isUndefined__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_isUndefined__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash_isUndefined___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash_isUndefined__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__style_styles_scss__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__style_styles_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__style_styles_scss__);
@@ -378,7 +406,7 @@ navItems.forEach(function (item) {
 });
 
 window.addEventListener('scroll', __WEBPACK_IMPORTED_MODULE_1_lodash_throttle___default()(function () {
-    return toggleClass(body, 'scrolled', body.scrollTop < 125);
+    return toggleClass(body, 'scrolled', body.scrollTop >= 125);
 }, 250));
 
 var menuToggle = document.querySelector('.js-menu-toggle');
@@ -387,12 +415,12 @@ menuToggle.addEventListener('click', function () {
 });
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(1),
-    getRawTag = __webpack_require__(9),
-    objectToString = __webpack_require__(10);
+    getRawTag = __webpack_require__(10),
+    objectToString = __webpack_require__(11);
 
 /** `Object#toString` result references. */
 var nullTag = '[object Null]',
@@ -421,7 +449,7 @@ module.exports = baseGetTag;
 
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
@@ -429,10 +457,10 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 
 module.exports = freeGlobal;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17)))
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(1);
@@ -484,7 +512,7 @@ module.exports = getRawTag;
 
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -512,12 +540,12 @@ module.exports = objectToString;
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(0),
-    now = __webpack_require__(14),
-    toNumber = __webpack_require__(15);
+    now = __webpack_require__(15),
+    toNumber = __webpack_require__(16);
 
 /** Error message constants. */
 var FUNC_ERROR_TEXT = 'Expected a function';
@@ -706,7 +734,7 @@ module.exports = debounce;
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports) {
 
 /**
@@ -741,11 +769,11 @@ module.exports = isObjectLike;
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(7),
-    isObjectLike = __webpack_require__(12);
+var baseGetTag = __webpack_require__(8),
+    isObjectLike = __webpack_require__(13);
 
 /** `Object#toString` result references. */
 var symbolTag = '[object Symbol]';
@@ -776,7 +804,7 @@ module.exports = isSymbol;
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var root = __webpack_require__(2);
@@ -805,11 +833,11 @@ module.exports = now;
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(0),
-    isSymbol = __webpack_require__(13);
+    isSymbol = __webpack_require__(14);
 
 /** Used as references for various `Number` constants. */
 var NAN = 0 / 0;
@@ -877,7 +905,7 @@ module.exports = toNumber;
 
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports) {
 
 var g;
@@ -901,39 +929,6 @@ try {
 // easier to handle this case. if(!global) { ...}
 
 module.exports = g;
-
-
-/***/ }),
-/* 17 */,
-/* 18 */,
-/* 19 */,
-/* 20 */,
-/* 21 */,
-/* 22 */
-/***/ (function(module, exports) {
-
-/**
- * Checks if `value` is `undefined`.
- *
- * @static
- * @since 0.1.0
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is `undefined`, else `false`.
- * @example
- *
- * _.isUndefined(void 0);
- * // => true
- *
- * _.isUndefined(null);
- * // => false
- */
-function isUndefined(value) {
-  return value === undefined;
-}
-
-module.exports = isUndefined;
 
 
 /***/ })

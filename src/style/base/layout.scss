@@ -1,6 +1,14 @@
 * { box-sizing: border-box; }
 
-body { background: $gray-light; }
+body { 
+    background: $gray-light;
+    
+    &.showMenu {
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+    }
+}
 
 .contentWrap {
     width: 100%;

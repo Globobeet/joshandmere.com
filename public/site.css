@@ -432,6 +432,10 @@ a, a:hover {
 
 body {
   background: #E4E1E6; }
+  body.showMenu {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh; }
 
 .contentWrap {
   width: 100%;
@@ -492,7 +496,7 @@ body {
 
 .u-leadIn {
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .7em;
   margin: 0; }
@@ -825,6 +829,75 @@ body {
       display: block;
       padding: 1em;
       border-bottom: 1px solid #25242c; } }
+
+.theParty {
+  overflow: hidden; }
+  .theParty-header {
+    text-align: center;
+    margin-bottom: 30px; }
+  .theParty-leadIn {
+    color: #ADA3B3; }
+  .theParty-people {
+    overflow: hidden; }
+    .theParty-people:first-of-type {
+      background: #AC5858; }
+    .theParty-people:last-of-type {
+      background: #242147; }
+  .theParty-person {
+    text-align: center;
+    color: #FFFFFF;
+    width: 50%;
+    padding-bottom: 50%;
+    float: left;
+    position: relative; }
+    .theParty-person-info {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-flow: column nowrap;
+              flex-flow: column nowrap;
+      -webkit-box-pack: end;
+          -ms-flex-pack: end;
+              justify-content: flex-end;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      padding: 15% 15px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0; }
+    .theParty-person-name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0 0 .25em; }
+    .theParty-person-designation {
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      display: inline-block;
+      border-radius: 3px;
+      background: #FFFFFF;
+      padding: .5em .75em; }
+    .theParty-person-bio a {
+      font-weight: 700;
+      color: #FFFFFF; }
+    .theParty-person--bride .overlayBlock-bg--overlay {
+      background: #AC5858; }
+    .theParty-person--bride .theParty-person-designation {
+      color: #AC5858; }
+    .theParty-person--groom .overlayBlock-bg--overlay {
+      background: #242147; }
+    .theParty-person--groom .theParty-person-designation {
+      color: #242147; }
+  @media (min-width: 960px) {
+    .theParty-people {
+      width: 50%;
+      float: left; } }
 
 .theVenue {
   text-align: center;

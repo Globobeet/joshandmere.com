@@ -28,7 +28,7 @@ navItems.forEach(item => item.addEventListener('click', (e) => {
     return animateScrollTo(offset.top + (document.body.scrollTop - 40));
 }));
 
-window.addEventListener('scroll', throttle(() => toggleClass(body, 'scrolled', (body.scrollTop < 125)), 250));
+window.addEventListener('scroll', throttle(() => toggleClass(body, 'scrolled', (body.scrollTop >= 125)), 250));
 
 const menuToggle = document.querySelector('.js-menu-toggle');
 menuToggle.addEventListener('click', () => toggleClass(body, 'showMenu'));
