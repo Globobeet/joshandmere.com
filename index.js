@@ -6,7 +6,7 @@ keystone.init({
 	'name': 'Josh and Mere',
 	'brand': 'Josh and Mere',
 	'static': 'public',
-	'favicon': 'public/favicon.ico',
+	'favicon': 'public/favicon.png',
 	'views': 'templates/views',
 	'view engine': '.hbs',
 

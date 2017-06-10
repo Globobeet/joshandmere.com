@@ -4,7 +4,14 @@
     <button type="button" class="js-menu-toggle mainNav-toggle u-hideLarge"><i class="icon icon--bars icon--size24 icon--colorWhite"></i> Navigation</button>
     <div class="mainNav-links">
         {{#each navItems}}
-            <a href="{{href}}" class="mainNav-item {{className}}">{{name}}</a>
+            <a 
+                href="{{href}}" 
+                class="mainNav-item {{className}}" 
+                {{#if external}}
+                    data-external="true" 
+                    target="_blank"
+                {{/if}}
+            >{{name}}</a>
         {{/each}}
     </div>
 </nav>
@@ -48,7 +55,7 @@
     <div class="theParty-people">
         {{#each party.bridesmaids}}
             <div class="overlayBlock theParty-person theParty-person--bride">
-                <span class="overlayBlock-bg overlayBlock-bg--image" style="background-image: url('{{cl "url" image.public_id}}');"></span>
+                <span class="overlayBlock-bg overlayBlock-bg--image" style="background-image: url('{{cl "url" image.public_id transformation="headshot"}}');"></span>
                 <span class="overlayBlock-bg overlayBlock-bg--overlay"></span>
 
                 <div class="theParty-person-info">
@@ -61,7 +68,7 @@
     <div class="theParty-people">
         {{#each party.groomsmen}}
             <div class="overlayBlock theParty-person theParty-person--groom">
-                <span class="overlayBlock-bg overlayBlock-bg--image" style="background-image: url('{{cl "url" image.public_id}}');"></span>
+                <span class="overlayBlock-bg overlayBlock-bg--image" style="background-image: url('{{cl "url" image.public_id transformation="headshot"}}');"></span>
                 <span class="overlayBlock-bg overlayBlock-bg--overlay"></span>
                 <div class="theParty-person-info">
                     <h3 class="theParty-person-name">{{name.first}} {{name.last}}</h3>

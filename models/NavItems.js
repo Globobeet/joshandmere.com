@@ -7,6 +7,7 @@ NavItem.add({
     name: { type: Types.Text, required: true, initial: true },
     href: { type: Types.Text, required: true, initial: true },
     className: { type: Types.Text, initial: true },
+    external: { type: Types.Boolean, initial: true },
 });
 
 NavItem.defaultColumns = 'name, href';

@@ -20,6 +20,7 @@ const toggleClass = (elem, className, shouldAdd) => {
 };
 
 navItems.forEach(item => item.addEventListener('click', (e) => {
+    if (item.getAttribute('data-external')) { return; }
     e.preventDefault();
     const sectionId = item.href.split('#')[1];
     const section = document.getElementById(sectionId);
