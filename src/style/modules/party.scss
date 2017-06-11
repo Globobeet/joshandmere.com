@@ -22,6 +22,16 @@
         padding-bottom: 50%;
         float: left;
         position: relative;
+        overflow: hidden;
+        
+        .overlayBlock-bg--overlay,
+        &-info {
+            transition: opacity $speed-slow ease-out; 
+        }
+        
+        .overlayBlock-bg--image {
+            transition: transform $speed-slow ease-out;
+        }
         
         &-info {
             display: flex;
@@ -64,6 +74,17 @@
         &--groom {
             .overlayBlock-bg--overlay { background: $secondary; }
             #{$this}-person-designation { color: $secondary; }
+        }
+
+        &:hover {
+            .overlayBlock-bg--overlay,
+            #{$this}-person-info {
+                opacity: 0;
+            }
+
+            .overlayBlock-bg--image {
+                transform: scale(1.1);
+            }
         }
     }
 
