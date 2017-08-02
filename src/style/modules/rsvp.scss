@@ -1,0 +1,166 @@
+.rsvp {
+    $creme: #fbfbf3;
+    $sage: #ececd5;
+    $blue-light: #aca3b3;
+    $blue-dark: #3f4b70;
+
+    min-height: 100vh;
+    background-repeat: repeat;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    padding: 24px 20px;
+
+    &-panel {
+        text-align: center;
+        position: relative;
+        margin: 0 auto;
+        border: 18px solid $creme;
+        opacity: 1;
+        transition: opacity $speed-regular ease-out;
+        width: 100%;
+        max-width: 600px;
+
+        &--code { max-width: 400px; }
+
+        &.is-loading {
+            pointer-events: none;
+            opacity: .4;
+        }
+
+        &-wrap {
+            background: $creme;
+            border: 4px solid $sage;
+            padding: 24px;
+
+            > * {
+                animation-name: fadeIn;
+                animation-duration: $speed-regular;
+                animation-iteration-count: 1;
+            }
+        }
+
+        &-title {
+            color: $blue-light;
+            letter-spacing: .2em;
+        }
+
+        &-error {
+            font-size: $size-xsmall;
+            font-weight: $weight-medium;
+            color: $primary;
+            margin: 12px 0 0 0;
+        }
+    }
+
+    &-codeForm {
+        &-input {
+            font-family: $font-body;
+            font-size: $size-xlarge;
+            font-weight: $weight-extrabold;
+            line-height: 1.5em;
+            text-align: center;
+            text-transform: uppercase;
+            color: $blue-dark;
+            background: none;
+            display: inline-block;
+            width: 8em;
+            padding: .1em .25em;
+            border: none;
+            border-bottom: 2px solid rgba($blue-light, .2);
+        }
+    }
+
+    &-rsvpForm {
+        &-instructions {
+            font-size: $size-small;
+            font-weight: $weight-medium;
+            color: $blue-dark;
+            margin: 0;
+        }
+
+        &-guests { margin: 24px 0; }
+
+        &-guest {
+            font-family: $font-display;
+            font-size: $size-large * $scaling-title;
+            background: none;
+            border: none;
+            display: inline-block;
+            width: 100%;
+            color: $primary;
+            opacity: .2;
+            transition: all $speed-fast ease-out;
+            cursor: pointer;
+            padding: 0;
+
+            &.is-attending {
+                opacity: 1;
+                color: $blue-dark;
+                animation-name: guestAccept;
+                animation-duration: $speed-fast;
+                animation-iteration-count: 1;
+            }
+
+            @include breakpoint($bp-large) {
+                width: 50%;
+            }
+        }
+
+        &-plusOne {
+            font-family: $font-display;
+            font-size: $size-large * $scaling-title;
+            text-align: center;
+            color: $blue-dark;
+            background: none;
+            display: block;
+            padding: 0 0 .1em 0;
+            border: none;
+            border-bottom: 2px solid rgba($blue-light, .2);
+            margin: 0 auto 24px;
+            @include placeholder { color: rgba($primary, .2); }
+        }
+
+        &-submit {
+            font-family: $font-body;
+            font-size: $size-small;
+            font-weight: $weight-bold;
+            color: $blue-dark;
+            display: inline-block;
+            padding: .5em 2em;
+            cursor: pointer;
+
+            &:hover {
+                color: $creme;
+                border-color: $blue-dark;
+                background: $blue-dark;
+            }
+        }
+    }
+
+    &-thanks {
+        &-message {
+            font-size: $size-small;
+            font-weight: $weight-medium;
+            line-height: $leading-regular;
+            color: $blue-dark;
+            margin: 12px 0 24px;
+        }
+
+        &-button {
+            font-family: $font-body;
+            font-size: $size-small;
+            font-weight: $weight-bold;
+            color: $blue-dark;
+            display: inline-block;
+            padding: .5em 2em;
+            cursor: pointer;
+
+            &:hover {
+                color: $creme;
+                border-color: $blue-dark;
+                background: $blue-dark;
+            }
+        }
+    }
+}

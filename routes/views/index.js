@@ -1,4 +1,4 @@
-const _ = require('lodash');
+const { set, filter } = require('lodash');
 const keystone = require('keystone');
 
 module.exports = (req, res) => {
@@ -25,8 +25,8 @@ module.exports = (req, res) => {
     view.on('init', next => keystone.list('Member')
         .model.find({}).lean().exec()
         .then(results => {
-            _.set(locals, 'party.bridesmaids', _.filter(results, { side: 'bride' }));
-            _.set(locals, 'party.groomsmen', _.filter(results, { side: 'groom' }));
+            set(locals, 'party.bridesmaids', filter(results, { side: 'bride' }));
+            set(locals, 'party.groomsmen', filter(results, { side: 'groom' }));
             next();
         })
         .catch(next));

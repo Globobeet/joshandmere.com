@@ -23,11 +23,11 @@
 
 @mixin transitionProps($props, $speed: $speed-regular, $ease: ease-out) {
     $transitions: ();
-    
+
     @each $prop in $props {
         $transitions: $transitions, $prop $speed $ease;
     }
-    
+
     transition: $transitions;
 }
 
@@ -43,8 +43,13 @@
         @warn 'No z-index found for layer "#{$layer}".';
         z-index: 0;
     }
-    
-    
+}
+
+@mixin placeholder {
+    &::-webkit-input-placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
 }
 
 @function font-url($path) { @return url("#{$font-path}/#{$path}"); }

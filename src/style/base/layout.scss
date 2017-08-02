@@ -1,12 +1,18 @@
 * { box-sizing: border-box; }
 
-body { 
+body {
     background: $gray-light;
-    
+
     &.showMenu {
         overflow: hidden;
         width: 100vw;
         height: 100vh;
+
+        @include breakpoint($bp-large) {
+            overflow: auto;
+            width: auto;
+            height: auto;
+        }
     }
 }
 
@@ -25,7 +31,7 @@ body {
         MediumUp: $screen-medium,
         Large: $screen-large,
     );
-    
+
     display: none !important;
 
     @each $name, $bp in $_variants {

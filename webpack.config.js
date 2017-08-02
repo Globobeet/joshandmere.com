@@ -7,7 +7,7 @@ const extractSass = new ExtractTextPlugin('[name].css');
 
 module.exports = {
     entry: {
-        site: './src/script/index.js',
+        site: ['whatwg-fetch', './src/script/index.jsx'],
     },
 
     output: {

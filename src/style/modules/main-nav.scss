@@ -2,14 +2,14 @@
     $this: &;
     $_darkBg: mix($gray-dark, $black, 75%);
     $_mobileMaxWidth: 420px;
-    
-    font-size: $size-regular;
+
+    font-size: ($size-small + $size-regular) / 2;
     font-weight: $weight-thin;
     text-align: center;
     width: 100%;
     @include position(fixed, 0 0 auto 0);
     @include zIndex(nav);
-    
+
     &-item { color: $white; }
 
     &-toggle {
@@ -28,13 +28,13 @@
         max-width: 1024px;
         @include zIndex(nav-control);
         @include transitionProps(background max-width);
-        
-        .icon { 
+
+        .icon {
             margin-right: .5em;
             transform: rotate(0deg);
             @include transitionProps(transform);
         }
-        
+
         .scrolled & { background: rgba($_darkBg, .9); }
         .showMenu & {
             background: $_darkBg;
@@ -42,7 +42,7 @@
             .icon { transform: rotate(90deg); }
         }
     }
-    
+
     @include breakpoint($screen-large) {
         padding: 1.25em 0;
         @include transitionProps(background padding);
@@ -59,17 +59,17 @@
 
         &-item {
             display: inline-block;
-            margin: 0 1em;
+            margin: 0 .8em;
         }
 
-        
+
         .scrolled & {
             padding: .5em 0;
             background: rgba($_darkBg, .9);
             &:hover { background: $_darkBg; }
         }
     }
-    
+
     @include breakpoint($screen-medium-max) {
         &-links {
             width: 100%;
@@ -80,13 +80,13 @@
             padding-top: 55px;
             @include position(fixed, 0 auto 0 ($_mobileMaxWidth * -1));
             @include transitionProps(left opacity);
-            
+
             .showMenu & {
                 opacity: 1;
                 left: 0;
             }
         }
-        
+
         &-item {
             display: block;
             padding: 1em;
