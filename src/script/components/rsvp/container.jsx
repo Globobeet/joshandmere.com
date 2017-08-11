@@ -90,7 +90,7 @@ export default class extends Component {
                         onSubmit={this.handleRSVPSubmit}
                     />
                 );
-                
+
             case 'responded':
                 return (<Responded />);
 

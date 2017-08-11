@@ -53,12 +53,12 @@ module.exports = (app) => {
                         first: names.join(' '),
                     },
                 });
-                
+
                 return Guest.model.create(plusOneGuestData)
-                    .then(({ _id }) => invite.guests.addToSet(_id));
+                    .then(guest => invite.guests.addToSet(guest));
             }),
-            invite.save(),
         ])
+            .then(() => invite.save())
             .then(() => res.send(invite));
     });
 };
