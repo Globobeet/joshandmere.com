@@ -39,5 +39,5 @@ const onMainNavClick = (e) => {
 
 window.addEventListener('scroll', throttle(() => toggleClass(body, 'scrolled', (body.scrollTop >= 125)), 250));
 withSelector('.mainNav-item', el => el.addEventListener('click', onMainNavClick), { multi: true });
-withSelector('.js-menu-toggle', () => toggleClass(body, 'showMenu'));
+withSelector('.js-menu-toggle', el => el.addEventListener('click', () => toggleClass(body, 'showMenu')));
 withSelector('.js-rsvp', el => render(<RSVP />, el));
